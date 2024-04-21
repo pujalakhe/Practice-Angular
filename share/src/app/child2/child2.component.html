@@ -1,0 +1,5 @@
+<div>
+    <h3>{{name}}</h3>
+    <button type="button" (click)="voted(true)"[disabled]="didvote">Present</button>
+<button type="button" (click)="voted(false)" [disabled]="didvote">Absent</button>
+</div>

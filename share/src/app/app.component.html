@@ -1,0 +1,14 @@
+<div>
+  <h2>Parent Componet</h2>
+  <h3>Enter student Name</h3>
+  <app-child1
+  (submit)="addItem($event)"></app-child1>
+  <h3>How many of you were present yesterday?</h3>
+  <h4>Present:{{presented}} , Absent:{{absented}}</h4>
+  <!-- <h4>Present:{{yes}} , Absent:{{no}}</h4> -->
+</div>
+
+<app-child2
+*ngFor="let eachStd of students"
+[name]="eachStd"
+(vote)="onvoted($event)"></app-child2>
