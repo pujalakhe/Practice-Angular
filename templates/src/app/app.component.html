@@ -1,0 +1,23 @@
+<button (click)="onsave()">Save</button>
+
+<input type="text" (keydown.shift.o)="onkeyDown($event)">
+<br>
+<input type="number" placeholder="phoneNumber" #phone>
+<button (click)="checkphoneno(phone.value)">Call</button>
+<p>{{message}}</p>
+<h2>Are you Eligible for Voting?</h2>
+<input #ageField type="number" name="age" id="age" placeholder="Enter the age" />
+<button type="button" (click)="checkAge(ageField.value)">Check</button>
+<p>{{msg}}</p>
+
+<h2>USing template with ngForm</h2>
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <label for="name">Name</label>
+    <input type="text" id="name" class="form-control" name="name" ngModel required />
+    <label for="age" Age></label>
+    <input type="number" name="age" id="age" ngModel required />
+    <button type="submit">Submit</button>
+</form>
+<div [hidden]="!userForm.form.valid">
+    <p>My name is {{name}} and I'm {{age}} years old.</p>
+</div>
