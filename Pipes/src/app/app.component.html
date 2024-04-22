@@ -1,0 +1,15 @@
+<p>my birthday is at {{date | date}}</p>
+<p>Japan Currency is {{amount | currency :'JPY' :'symbol'}}</p>
+<h2>Displaying Date in specified fromat</h2>
+<p>My birthdate is {{birthday | date |uppercase}} in the "medium-date" format</p>
+<p>My birthday is {{ birthday | date:format }} in "{{format}}" format.
+  Click the toggle button to change formats.</p>
+  <button type="button" (click)="toggleFormat()">Toggle to change date format</button>
+
+  <h2>Custom Pipe to convert string into Uppercase</h2>
+  <p>{{ word|CustomPipe}}</p>
+  <h2>Angular custor orderBy pipe</h2>
+  <div *ngFor="let eachsub of subjects | orderBy:'asc'">
+    {{eachsub.course}}:{{eachsub.cost}};
+  </div>
+  <p>{{arrays | orderBy : 'desc'}}</p>
