@@ -1,0 +1,2 @@
+export { AttributeDirectiveComponent } from './components/attribute-directive/attribute-directive.component';
+export { StructuralDirectiveComponent } from './components/structural-directive/structural-directive.component';
