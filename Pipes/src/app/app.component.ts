@@ -21,7 +21,7 @@ export class AppComponent {
   {
     this.toggle = !this.toggle;
   }
-  word =12;
+  word ="uppercase";
   subjects = [
     { course: "HTML", cost: 1800 }, 
     { course: "CSS", cost: 2900 }, 
@@ -30,5 +30,5 @@ export class AppComponent {
     { course: "React ", cost: 2500 } 
   ]; 
   arrays=[19,51,88,23];
-
+  name=["hat","dog","yak"];
 }

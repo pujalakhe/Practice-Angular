@@ -12,4 +12,7 @@
   <div *ngFor="let eachsub of subjects | orderBy:'asc'">
     {{eachsub.course}}:{{eachsub.cost}};
   </div>
-  <p>{{arrays | orderBy : 'desc'}}</p>
+  <p>{{arrays | orderBy :'asc'}}</p>
+  <p>{{name }}</p>
+  <p>{{name | orderBy : 'asc'}}</p>
+  <p>{{name | orderBy : 'desc'}}</p>
