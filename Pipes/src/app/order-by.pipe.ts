@@ -8,7 +8,7 @@ export class OrderByPipe implements PipeTransform {
   transform(value: any,order: "asc" | "desc"){
     //for objects
     return value.sort((a:any,b:any)=>
-      {
+      {                                                                                     
         if(order=="asc")
         {
           return a.cost-b.cost;
