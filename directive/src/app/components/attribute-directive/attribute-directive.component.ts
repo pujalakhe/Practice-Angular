@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './attribute-directive.component.css'
 })
 export class AttributeDirectiveComponent {
-
+  isSpecial=false;
+  changeClr(){
+    this.isSpecial=!this.isSpecial;
+  } 
+  typedText='hello';
 }

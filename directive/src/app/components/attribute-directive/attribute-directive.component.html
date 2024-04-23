@@ -1,1 +1,15 @@
-<p>attribute-directive works!</p>
+<h3>ngClass</h3>
+<button (click)="changeClr()">Change the style </button>
+<div [ngClass]="isSpecial ? 'special' : ''">This div is special</div>
+<h3>ngStyle</h3>
+<div [ngStyle]=
+    "{backgroundColor:'blue',color:'white'}"
+>
+This div is a div with [ngStyle] attribute directive.</div>
+
+<div [ngStyle]="{fontStyle:'italic',fontSize:'28px',textDecoration:'underlined'}"
+>
+This div is initially italic,has size of 28px and is underlined.</div>
+<h2>ngModel</h2>
+<input type="text" [(ngModel)]="typedText">
+<p>Searched item : {{typedText}}</p>
