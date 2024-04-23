@@ -1,1 +1,21 @@
-<p>structural-directive works!</p>
+<h2>ngIf Structural directive</h2>
+<div *ngIf="isActive">this is being displayed because it has truty value.</div>
+
+<h2>ngFor</h2>
+<ul *ngFor="let game of games">
+    <li>{{game}}</li>
+</ul>
+
+<div *ngFor="let item of items; let i=index">{{i + 1}} - {{item.name}}</div>
+<!-- ngSwitch Directive -->
+<h3>ngSwitch Structural Directive</h3>
+Input String:<input type="text" [(ngModel)]="num">
+<p>serched:{{num}}</p>
+<div [ngSwitch]="num">
+    <strong *ngSwitchCase="'1'">One</strong>
+    <strong *ngSwitchCase="'2'">Two</strong>
+    <strong *ngSwitchCase="'3'">Three</strong>
+    <strong *ngSwitchCase="'4'">Four</strong>
+    <strong *ngSwitchCase="'5'">Five</strong>
+    <strong *ngSwitchDefault>This is default</strong>
+</div>
