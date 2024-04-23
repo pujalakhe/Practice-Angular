@@ -1,20 +1,25 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import * as components from './import';
+import { TemplatereferenceComponent } from './templatereference/templatereference.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     components.AttributeDirectiveComponent,
-    components.StructuralDirectiveComponent
+    components.StructuralDirectiveComponent,
+    TemplatereferenceComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()
