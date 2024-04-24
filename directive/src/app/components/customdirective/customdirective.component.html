@@ -1,0 +1,10 @@
+<!-- Custom Attribute Directive -->
+<!-- Choose Your desired Color and hover over the text <br><input type="color" #chooseColor>
+<p appHover [hover]="chooseColor.value">Custom Directive Works!</p> -->
+<input type="color" #chooseColor>
+<p>{{chooseColor.value}}</p>
+
+<div appHover [hover]="chooseColor.value">works</div>
+<!-- Structural Attribute Directive -->
+<button (click)="condition=!condition"> Toggle</button>
+<h1 *appIfDirective="condition">hello</h1>
