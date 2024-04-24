@@ -2,10 +2,12 @@
 
 <app-templatereference #child></app-templatereference>
 <button (click)="child.greetMe()">Click to see magic </button>
-
+<br><br>
+<!-- ngIf -->
+<button (click)="display.onActive()">Click to remove the below text</button>
 <app-structural-directive #display></app-structural-directive>
-<button (click)="display.onActive()">Click to remove the above text</button>
-<app-structural-directive ></app-structural-directive>
+
+
 
 <h2>Track By ngFor</h2>
 <input 
@@ -24,4 +26,8 @@
 <div>
     <p *ngFor="let sub of subjects trackBy:trackById">{{sub.id}} - {{sub.name}}</p>
 </div>
+
+<app-customdirective></app-customdirective>
+<input type="color" name="" id="" #color>{{color.value}}
+
 

@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import * as components from './import';
 import { TemplatereferenceComponent } from './templatereference/templatereference.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     components.AttributeDirectiveComponent,
     components.StructuralDirectiveComponent,
-    TemplatereferenceComponent
+    TemplatereferenceComponent,
+    components.HoverDirective,
+    components.CustomdirectiveComponent,
+    components.IfDirectiveDirective
   ],
   imports: [
     BrowserModule,
