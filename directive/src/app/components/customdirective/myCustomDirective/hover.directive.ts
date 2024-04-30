@@ -1,9 +1,9 @@
-import { Directive,Input,ElementRef,HostListener} from '@angular/core';
+import { Directive,Input,ElementRef,HostListener, OnInit} from '@angular/core';
 
 @Directive({
   selector: '[appHover]'
 })
-export class HoverDirective {
+export class HoverDirective implements OnInit {
 
   @Input() hover:string="";
  
