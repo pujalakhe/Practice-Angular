@@ -4,6 +4,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { AboutComponent } from './Components/about/about.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 import { CourseComponent } from './Components/course/course.component';
+import { SearchComponent } from './Components/search/search.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
     component: CourseComponent,
   },
   { path: 'about', component: AboutComponent },
+  {path:'search',component:SearchComponent},
   { path: '**', component: PageNotFoundComponent }, //wildcard
 ];
 

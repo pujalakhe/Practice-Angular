@@ -9,13 +9,15 @@ import { RouterLink, RouterLinkActive, RouterOutlet, provideRouter } from '@angu
 import { Route } from '@angular/router';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 import { CourseComponent } from './Components/course/course.component';
+import { SearchComponent } from './Components/search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
     PageNotFoundComponent,
-    CourseComponent
+    CourseComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

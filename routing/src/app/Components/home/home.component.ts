@@ -9,9 +9,13 @@ import { NavigationExtras,ActivatedRoute, Router } from '@angular/router';
 export class HomeComponent {
   router:Router=inject(Router)
   activeRoute:ActivatedRoute=inject(ActivatedRoute)
-  navigateToCourse(){
-    // this.router.navigate(['course']);
-     this.router.navigate(['course'], {relativeTo:this.activeRoute});
-    this.router.navigateByUrl('course')
+  navigateMethod(){
+    this.router.navigate(['course'],{queryParams:{name:'puja',age:22},fragment: 'buttonClick'});
+  }
+  navigateRelative(){
+    this.router.navigate(['course'],{relativeTo:this.activeRoute})
+  }
+  navigateByUrlMethod(){
+    this.router.navigateByUrl('search?pageNum=3');
   }
 }

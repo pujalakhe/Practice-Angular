@@ -2,7 +2,8 @@
 <nav>
   <ul>
     <li><a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a></li>
-    <li><a routerLink="/about" [routerLinkActive]="'active'" ariaCurrentWhenActive="page">About</a></li>
+    <li><a routerLink="/about" [routerLinkActive]="'active'" ariaCurrentWhenActive="page" [queryParams]="{ order: 'popular',color:'blue'}" >About</a></li>
+    <li><a routerLink="/search" [routerLinkActive]="'active'" ariaCurrentWhenActive="page">Search</a></li>
   </ul>
 </nav>
 <router-outlet></router-outlet>
