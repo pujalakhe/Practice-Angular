@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, inject,Injectable } from '@angular/core';
 import { LoggerService } from './logger.service';
 import { Product } from './product';
 
@@ -10,7 +10,6 @@ export class ProductService {
   constructor(private loggerService: LoggerService) {
     console.log('Product Service Created');
   }
-
   public getProducts() {
     this.loggerService.log('getProducts called');
     let products: Product[];

@@ -1,5 +1,5 @@
 import { Component,Inject} from '@angular/core';
-
+import { APP_CONFIG_TOKEN } from '../../app.module';
 @Component({
   selector: 'app-usevalue',
   templateUrl: './usevalue.component.html',
@@ -8,7 +8,7 @@ import { Component,Inject} from '@angular/core';
 export class UsevalueComponent {
   constructor(
     @Inject('USE_FAKE') public useFake:string,
-    @Inject('APP_CONFIG') public appConfig:any,
+    @Inject(APP_CONFIG_TOKEN) public appConfig:any,
     @Inject('Func') public someFunc:any
   ){
     // console.log(someFunc());

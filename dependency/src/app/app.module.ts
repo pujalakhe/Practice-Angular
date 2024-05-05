@@ -11,12 +11,14 @@ import { Product } from './ProviderTypes/usefactor/product';
 import { ProductService } from './ProviderTypes/usefactor/product.service';
 import { FakeProductService } from './ProviderTypes/usefactor/fake-product.service';
 import { NewProductService } from './ProviderTypes/useexisting/new-product.service';
+import { InjectionToken } from '@angular/core';
 
 const APP_CONFIG =Object.freeze(
   {
     serviceURL: 'www.serviceUrl.comapi',
     IsDevleomentMode: true
   });
+  export const APP_CONFIG_TOKEN = new InjectionToken <any>("APP_CONFIG")
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,15 +34,14 @@ const APP_CONFIG =Object.freeze(
     provideClientHydration(),
     HeroService,
     {provide:"USE_FAKE" , useValue:false},
-    {provide: "APP_CONFIG" , useValue:APP_CONFIG},
+    {provide: APP_CONFIG_TOKEN , useValue:APP_CONFIG},
     {provide:"Func" , useValue :()=>{
       return 55;
     }},
     //useFactor
     {provide:LoggerService,useClass:LoggerService},
     {provide:ProductService, 
-      useFactory:(USE_FAKE:boolean, LoggerService:any)=>
-      USE_FAKE ? new FakeProductService() : new ProductService(LoggerService),
+      useFactory:resolveProductService,
       deps: ['USE_FAKE', LoggerService],
     },
 
