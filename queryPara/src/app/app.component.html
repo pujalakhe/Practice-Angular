@@ -1,0 +1,7 @@
+<ul>
+  <li><a routerLink="/employee">Employee</a></li>
+</ul>
+<hr>
+<a [routerLink]="['/employee','1']" [queryParams]="{page:1,color:'black'}">Employee1</a><br>
+<button [routerLink]="['/employee','2']" (click)="navToPage(4)">Employee 2</button>
+<router-outlet></router-outlet>
