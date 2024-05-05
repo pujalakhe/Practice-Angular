@@ -5,6 +5,7 @@ import { AboutComponent } from './Components/about/about.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 import { CourseComponent } from './Components/course/course.component';
 import { SearchComponent } from './Components/search/search.component';
+import path from 'node:path';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

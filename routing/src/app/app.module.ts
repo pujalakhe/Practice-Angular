@@ -17,7 +17,7 @@ import { SearchComponent } from './Components/search/search.component';
     AboutComponent,
     PageNotFoundComponent,
     CourseComponent,
-    SearchComponent
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
