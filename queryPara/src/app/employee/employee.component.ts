@@ -7,10 +7,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EmployeeComponent implements OnInit {
   activatedRoute = inject(ActivatedRoute);
+  userId:any;
   pageNum:any;
   color:any;
- 
+  // Accessing Router Parameter
   ngOnInit():void{
+    // //snapshot
+    // this.userId=this.activatedRoute.snapshot.paramMap.get('id');
+    //observable
+    this.activatedRoute.paramMap.subscribe(params=>{
+      this.userId=params.get('id');
+    })
+    //Qvery Parameters
+    //Snapshot Query Parameters
     // this.pageNum = this.activatedRoute.snapshot.queryParamMap.get("page");
     this.activatedRoute.queryParamMap.subscribe(params=>
       {this.pageNum = params.get('page');
@@ -20,5 +29,4 @@ export class EmployeeComponent implements OnInit {
   
         });
   }
-
 }
