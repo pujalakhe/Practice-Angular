@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import path from 'node:path';
 import { NonLazyComponenetComponent } from './components/non-lazy-componenet/non-lazy-componenet.component';
 
 export const routes: Routes = [
