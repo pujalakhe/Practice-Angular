@@ -1,0 +1,27 @@
+<p>product works!</p>
+<h1>Products List</h1>
+<table>
+  <thead>
+    <tr>
+      <th>ProductId</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Buy</th>
+      <th>Add to cart</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of allProducts">
+      <td>{{ i.productId }}</td>
+      <td>{{ i.name }}</td>
+      <td>{{ i.price }}</td>
+      <td>
+        <a routerLink="buy" class="gap">Buy</a>
+      </td>
+      <td>
+        <a routerLink="add-to-cart">Add to Cart</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<router-outlet></router-outlet>

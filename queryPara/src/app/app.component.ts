@@ -9,6 +9,6 @@ export class AppComponent {
   title = 'queryPara';
   route=inject(Router);
   navToPage(pageno:number){
-    this.route.navigate(['/employee','2'],{queryParams:{page:pageno,color:'blue'}})
+    this.route.navigate(['/employee','2'],{queryParams:{page:pageno,color:'blue'}});
   }
 }

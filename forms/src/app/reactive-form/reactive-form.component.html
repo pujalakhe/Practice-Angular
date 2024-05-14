@@ -1,0 +1,67 @@
+<section class="reactive-form">
+    <header class="center-text">Reactive Form</header>
+
+    <form class="form" [formGroup]= "reactiveForm" (ngSubmit)="onFormSubmitted()">
+        <div class="column">
+            <div class="inputbox">
+                <input type="text" placeholder="First Name" formControlName="firstName">
+                <div class="alert-msg" *ngIf="reactiveForm.controls['firstName'].invalid && (reactiveForm.controls['firstName'].touched || reactiveForm.controls['firstName'].dirty)">
+                    <span class="alert" *ngIf="reactiveForm.controls['firstName'].errors?.['required']">This is a required filed</span>
+                </div>
+            </div>
+            <div class="inputbox">
+                <input type="text" placeholder="Last Name" formControlName="lastName">
+                <span class="alert" *ngIf="reactiveForm.controls['lastName'].invalid && reactiveForm.controls['lastName'].touched">This is a required field</span>
+                <span class="alert" *ngIf="reactiveForm.controls['lastName'].invalid && reactiveForm.controls['lastName'].touched">This is a required field</span>
+            </div>
+            <div class="inputbox">
+                <input type="text" placeholder="Email" formControlName="email">
+                <span class="alert" *ngIf="reactiveForm.controls['email'].invalid && reactiveForm.controls['email'].touched">This is a required field</span>
+            </div>
+            <div class="inputbox">
+                <input type="number" placeholder="Phone Number" formControlName="phoneNo">
+            </div>
+            <div class="inputbox">
+                <input type="date" formControlName="dob">
+            </div>
+            <div class="inputbox">
+                <input type="text" placeholder="username" formControlName="userName">
+            </div>
+            <button class="username-btn">Create a username</button>
+
+            <!-- Gender -->
+            <div class="gender-box">
+                <h3>Gender</h3>
+                <div class="gender-option">
+                    <div class="gender">
+                        <input type="radio"  value="male" id="check-male" formControlName="gender">
+                        <label for="check-male">Male</label>
+                        <input type="radio"  id="check-female" formControlName="gender">
+                        <label for="check-female">Female</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Address -->
+            <div class="address-box">
+                <label for="">Address</label>
+                <div class="column">
+                    <div class="select-box">
+                        <select name="country" id="" formControlName="country">
+                            <option hidden>Country</option>
+                            <option value="nepal">Nepal</option>
+                            <option value="japanx">Japan</option>
+                            <option value="">India</option>
+                            <option value="">Korea</option>
+                        </select>
+                    </div>
+                    <input type="text" placeholder="City" formControlName="city">
+                </div>
+            </div>
+            <div class="column">
+                <input type="text" name="" id="" placeholder="Region" formControlName="region">
+            </div>
+        </div>
+        <input type="submit" value="Submit" class="submit-btn" [disabled]="!reactiveForm.valid">
+    </form>
+</section>
+

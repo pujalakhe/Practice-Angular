@@ -10,6 +10,7 @@ export class EmployeeComponent implements OnInit {
   userId:any;
   pageNum:any;
   color:any;
+  fragment:any;
   // Accessing Router Parameter
   ngOnInit():void{
     // //snapshot
@@ -21,12 +22,13 @@ export class EmployeeComponent implements OnInit {
     //Qvery Parameters
     //Snapshot Query Parameters
     // this.pageNum = this.activatedRoute.snapshot.queryParamMap.get("page");
+    // this.fragment = this.activatedRoute.snapshot.fragment;
+    //Observable
     this.activatedRoute.queryParamMap.subscribe(params=>
       {this.pageNum = params.get('page');
       });
     this.activatedRoute.queryParamMap.subscribe(params=>
         {this.color = params.get('color');
-  
         });
-  }
+    }
 }
