@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'home',component:HomeComponent},
   {path:'about',component:AboutComponent},
-  {path:'product',component:PrdouctComponent,canActivateChild:[activeChildGuard],
+  {path:'product',component:PrdouctComponent,canActivate:[activeChildGuard],
     children:
     [{
       path:'buy',component:BuyComponent,canDeactivate:[(component:BuyComponent)=> { return component.canExit();}
