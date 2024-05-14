@@ -1,9 +1,14 @@
-import { ActivatedRouteSnapshot, CanActivateFn,Router, RouterStateSnapshot } from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  CanActivateFn,
+  Router,
+  RouterStateSnapshot,
+} from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { inject, } from '@angular/core';
+import { inject } from '@angular/core';
 import { BuyComponent } from '../components/prdouct/buy/buy.component';
-export const authGuard = 
-  () => {
+import { ProductListService } from '../services/product-list.service';
+export const authGuard = () => {
   // let authService = inject(AuthService);
   // let router = inject(Router);
   // let isLoggedIn = authService.isAuthenticated();
@@ -14,18 +19,20 @@ export const authGuard =
   //   router.navigate(['/about']);
   // }
   // Both ways are  correct
-  if(inject(AuthService).isAuthenticated()){
+  if (inject(AuthService).isAuthenticated()) {
     return true;
-  }
-  else{
+  } else {
     inject(Router).navigate(['/login']);
     return false;
   }
 };
-export const activeChildGuard = ( ) => {
+export const activeChildGuard = () => {
   return authGuard();
 };
-export const canDeactivate = (component:BuyComponent) => {
+export const canDeactivate = (component: BuyComponent) => {
   return component.canExit();
 };
-
+export const resolveGuard = () => {
+  const productService = inject(ProductListService);
+  return productService.getAllProducts();
+};
