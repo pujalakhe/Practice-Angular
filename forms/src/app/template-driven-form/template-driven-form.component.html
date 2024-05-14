@@ -1,0 +1,61 @@
+<section class="template-driven">
+    <header class="center-text">Template Driven Form</header>
+
+    <form class="form" (ngSubmit)="onFormSubmitted()" #registrationForm="ngForm">
+        <div class="column">
+            <div class="inputbox">
+                <input type="text" placeholder="First Name">
+            </div>
+            <div class="inputbox">
+                <input type="text" placeholder="Last Name">
+            </div>
+            <div class="inputbox">
+                <input type="text" placeholder="Email">
+            </div>
+            <div class="inputbox">
+                <input type="number" placeholder="Phone Number">
+            </div>
+            <div class="inputbox">
+                <input type="date" placeholder="Username">
+            </div>
+            <div class="inputbox">
+                <button class="username">Create a username</button>
+            </div>
+
+            <!-- Gender -->
+            <div class="gender-box">
+                <h3>Gender</h3>
+                <div class="gender-option">
+                    <div class="gender">
+                        <input type="radio" name="gender" id="check-male" checked>
+                        <label for="check-male">Male</label>
+                    </div>
+                    <div class="gender">
+                        <input type="radio" name="gender" id="check-female" >
+                        <label for="check-female">Female</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Address -->
+            <div class="address-box">
+                <label for="">Address</label>
+                <div class="column">
+                    <div class="select-box">
+                        <select name="country" id="">
+                            <option hidden>Country</option>
+                            <option value="">Nepal</option>
+                            <option value="">Japan</option>
+                            <option value="">India</option>
+                            <option value="">Korea</option>
+                        </select>
+                    </div>
+                    <input type="text" placeholder="City">
+                </div>
+            </div>
+            <div class="column">
+                <input type="text" name="" id="" placeholder="Region">
+            </div>
+        </div>
+        <input type="submit" value="Submit" class="submit-btn">
+    </form>
+</section>
