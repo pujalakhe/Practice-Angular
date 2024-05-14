@@ -1,11 +1,18 @@
-<h2>Login Form</h2>
-<label for="username">Username
-    <input type="text">
-</label>
-<br><br>
-<label for="password">Password
-    <input type="password" name="admin" id="admin">
-</label>
-<br><br>
-<button type="submit">Log In</button>
-
+<div class="form-container">
+    <h2 class="center">Login Form</h2>
+    <div class="center">
+        <label for="username">Username
+            <input type="text" name="username" [(ngModel)]="username">
+        </label>
+    </div>
+    <br>
+    <div class="center">
+        <label for="password">Password
+            <input type="password" name="userpassword" id="admin" [(ngModel)]="userpassword">
+        </label>
+    </div>
+    <br>
+    <div class="center">
+        <button type="submit" class="loginbtn" (click)="onLoggedIn(username,userpassword)">Log In</button>
+    </div>
+</div>
