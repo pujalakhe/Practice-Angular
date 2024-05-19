@@ -1,0 +1,12 @@
+<form class="form" [formGroup]="passwordGroup" (ngSubmit)="onFormSubmitted()">
+    <input type="text" placeholder="Password" formControlName="password">
+    <br>
+    <input type="text" placeholder="confirmPassword" formControlName="confirmPassword">
+    <br>
+    <!-- <ng-container *ngIf="passwordGroup.invalid && passwordGroup.touched">
+        <span *ngIf="passwordGroup.errors?.['notEqual']">pw does not match</span>
+    </ng-container><br> -->
+    <span *ngIf=" passwordGroup.invalid && (passwordGroup.touched || passwordGroup.errors?.['notEqual'])">pw does not
+        match</span>
+    <input type="submit" value="Submit" class="submit-btn" (click)="onSubmitted()">
+</form>
