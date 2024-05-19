@@ -1,25 +1,49 @@
 <section class="reactive-form">
     <header class="center-text">Reactive Form</header>
 
-    <form class="form" [formGroup]= "reactiveForm" (ngSubmit)="onFormSubmitted()">
+    <form class="form" [formGroup]="reactiveForm" (ngSubmit)="onFormSubmitted()">
         <div class="column">
             <div class="inputbox">
                 <input type="text" placeholder="First Name" formControlName="firstName">
-                <div class="alert-msg" *ngIf="reactiveForm.controls['firstName'].invalid && (reactiveForm.controls['firstName'].touched || reactiveForm.controls['firstName'].dirty)">
-                    <span class="alert" *ngIf="reactiveForm.controls['firstName'].errors?.['required']">This is a required filed</span>
+                <div class="alert-msg"
+                    *ngIf="reactiveForm.controls['firstName'].invalid && (isFormSubmitted||reactiveForm.controls['firstName'].touched || reactiveForm.controls['firstName'].dirty)">
+                    <span class="alert" *ngIf="reactiveForm.controls['firstName'].errors?.['required']">This is a
+                        required field</span>
                 </div>
             </div>
             <div class="inputbox">
                 <input type="text" placeholder="Last Name" formControlName="lastName">
-                <span class="alert" *ngIf="reactiveForm.controls['lastName'].invalid && reactiveForm.controls['lastName'].touched">This is a required field</span>
-                <span class="alert" *ngIf="reactiveForm.controls['lastName'].invalid && reactiveForm.controls['lastName'].touched">This is a required field</span>
+                <div class="alert-msg"
+                    *ngIf="reactiveForm.controls['lastName'].invalid && (isFormSubmitted|| reactiveForm.controls['lastName'].touched || reactiveForm.controls['lastName'].dirty)">
+                    <span class="alert" *ngIf="reactiveForm.controls['firstName'].errors?.['required']">This
+                        is a required field</span>
+                </div>
             </div>
             <div class="inputbox">
                 <input type="text" placeholder="Email" formControlName="email">
-                <span class="alert" *ngIf="reactiveForm.controls['email'].invalid && reactiveForm.controls['email'].touched">This is a required field</span>
+                <div class="alert-msg"
+                    *ngIf="reactiveForm.controls['email'].invalid && (isFormSubmitted||reactiveForm.controls['email'].touched || reactiveForm.controls['email'].dirty)">
+                    <span class="alert" *ngIf="reactiveForm.controls['email'].errors?.['required']">This is a
+                        required field</span>
+                    <span class="alert" *ngIf="reactiveForm.controls['email'].errors?.['email']">This is an
+                        invalid email</span>
+                </div>
             </div>
             <div class="inputbox">
-                <input type="number" placeholder="Phone Number" formControlName="phoneNo">
+                <input type="phone" placeholder="Phone Number" formControlName="phoneNo">
+                <div class="alert-msg"
+                    *ngIf="reactiveForm.controls['phoneNo'].invalid && (isFormSubmitted||reactiveForm.controls['phoneNo'].touched || reactiveForm.controls['phoneNo'].dirty)">
+                    <span class="alert" *ngIf="reactiveForm.controls['phoneNo'].errors?.['maxlength']">Phone
+                        Numbers can
+                        only
+                        be of 10
+                        digits</span>
+                    <span class="alert" *ngIf="reactiveForm.controls['phoneNo'].errors?.['minlength']">Phone
+                        Numbers can
+                        only
+                        be of 10
+                        digits</span>
+                </div>
             </div>
             <div class="inputbox">
                 <input type="date" formControlName="dob">
@@ -34,34 +58,40 @@
                 <h3>Gender</h3>
                 <div class="gender-option">
                     <div class="gender">
-                        <input type="radio"  value="male" id="check-male" formControlName="gender">
+                        <input type="radio" value="male" id="check-male" formControlName="gender">
                         <label for="check-male">Male</label>
-                        <input type="radio"  id="check-female" formControlName="gender">
+                        <input type="radio" id="check-female" formControlName="gender">
                         <label for="check-female">Female</label>
                     </div>
                 </div>
             </div>
             <!-- Address -->
-            <div class="address-box">
+            <div class="address-box" formGroupName="address">
                 <label for="">Address</label>
+                <div class="select-box">
+                    <select name="country" id="" formControlName="country">
+                        <option hidden>Country</option>
+                        <option value="nepal">Nepal</option>
+                        <option value="japan">Japan</option>
+                        <option value="">India</option>
+                        <option value="">Korea</option>
+                    </select>
+                </div>
+                <input type="text" placeholder="City" formControlName="city">
+                <div class="alert-msg" *ngIf="">
+                    <span class="alert">This
+                        is a required field</span>
+                </div>
                 <div class="column">
-                    <div class="select-box">
-                        <select name="country" id="" formControlName="country">
-                            <option hidden>Country</option>
-                            <option value="nepal">Nepal</option>
-                            <option value="japanx">Japan</option>
-                            <option value="">India</option>
-                            <option value="">Korea</option>
-                        </select>
-                    </div>
-                    <input type="text" placeholder="City" formControlName="city">
+                    <input type="text" name="" id="" placeholder="Region" formControlName="region">
                 </div>
             </div>
-            <div class="column">
-                <input type="text" name="" id="" placeholder="Region" formControlName="region">
+            <!-- Skills -->
+            <div class="skills" formControlArray="skills">
+                <input type="text" placeholder="Add Skills...">
             </div>
+
         </div>
-        <input type="submit" value="Submit" class="submit-btn" [disabled]="!reactiveForm.valid">
+        <input type="submit" value="Submit" class="submit-btn" (click)="OnSubmitted()" [disabled]="!reactiveForm.valid">
     </form>
 </section>
-
