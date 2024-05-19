@@ -1,6 +1,7 @@
 import {
   ActivatedRouteSnapshot,
   CanActivateFn,
+  CanMatchFn,
   Router,
   RouterStateSnapshot,
 } from '@angular/router';
@@ -35,4 +36,12 @@ export const canDeactivate = (component: BuyComponent) => {
 export const resolveGuard = () => {
   const productService = inject(ProductListService);
   return productService.getAllProducts();
+};
+export const roleManagerGuard: CanMatchFn = (route, segments) => {
+  const role = localStorage.getItem('role');
+  console.log(role);
+  if (role && role == 'admin') {
+    return true;
+  }
+  return false;
 };

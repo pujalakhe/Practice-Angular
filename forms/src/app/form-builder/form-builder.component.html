@@ -1,0 +1,50 @@
+<form action="" class="form" [formGroup]="formBuilder" (ngSubmit)="formSubmit()">
+    <h1>Form Builder</h1>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name" formControlName="name">
+        @if(formBuilder.get('name')?.hasError('required') && formBuilder.get('name')?.touched){
+        <div style="color:red;">Name is required</div>
+        }
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com"
+            formControlName="email">
+        @if(formBuilder.get('email')?.hasError('required') &&
+        formBuilder.get('email')?.touched ){
+        <div style="color:red;">Email is required</div>
+        }
+        @if(formBuilder.get('email')?.hasError('email') &&
+        formBuilder.get('email')?.touched ){
+        <div style="color:red;">Email is not valid</div>
+        }
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleFormControlInput3" placeholder="password"
+            formControlName="password">
+        @if(formBuilder.get('password')?.hasError('maxlength') &&
+        formBuilder.get('password')?.touched ){
+        <div style="color:red;">Password must be of only 4 digits</div>
+        }
+    </div>
+    <label for="exampleFormControlInput1" class="form-label">Contact Number</label> <br>
+    <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Contact"
+        formControlName="contact">
+    <button type="button" (click)="addContact()">Add</button>
+    <div class="mb-3" formArrayName="contactNumbers">
+        @for(contact of contactNumbers().controls; track contact;let i =$index)
+        {
+        <div [formGroupName]="i">
+            <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Contact"
+                formControlName="contact">
+            <button type="button" (click)="removeContact(i)">Delete</button>
+        </div>
+        }
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit" (click)="OnSubmitted()">Submit
+            form</button>
+    </div>
+</form>

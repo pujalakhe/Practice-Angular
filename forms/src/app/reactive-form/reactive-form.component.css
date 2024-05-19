@@ -1,37 +1,39 @@
-*{
-    padding:0;
-    margin:5px;
+* {
+  padding: 0;
+  margin: 5px;
 }
-.reactive-form{
-    width:500px;
-    border:1px solid black;
-    padding:10px;
-    /* margin-left:auto;
+.reactive-form {
+  width: 500px;
+  border: 1px solid black;
+  padding: 10px;
+  /* margin-left:auto;
     margin-right: auto; */
 }
-input[type=text],input[type=date],input[type=number]{
-    padding:5px;
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+  padding: 5px;
 }
-.column .username-btn{
-    background-color: red;
-    padding:5px;
-    border-color: red;
-    border-radius: 5px;
-    color:white;
+.column .username-btn {
+  background-color: red;
+  padding: 5px;
+  border-color: red;
+  border-radius: 5px;
+  color: white;
 }
-.form .submit-btn{
-    color:white;
-    background-color: blue;
-    border-color: blue;
-    padding:5px;
-    border-radius: 5px;
+.form .submit-btn {
+  color: white;
+  background-color: blue;
+  border-color: blue;
+  padding: 5px;
+  border-radius: 5px;
 }
-.alert-msg .alert{
-    color:red;
+.alert-msg .alert {
+  color: red;
 }
-.alert{
-    color:red;
+.alert {
+  color: red;
 }
-input.ng-invalid.ng-touched{
-    border:2px solid red;
+input.ng-invalid.ng-touched {
+  border: 2px solid red;
 }

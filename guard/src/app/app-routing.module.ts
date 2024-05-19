@@ -8,6 +8,7 @@ import {
   activeChildGuard,
   canDeactivate,
   resolveGuard,
+  roleManagerGuard,
 } from './guard/active-child.guard';
 import { LoginComponent } from './components/login/login.component';
 import { BuyComponent } from './components/prdouct/buy/buy.component';
@@ -16,6 +17,20 @@ import { AddToCartComponent } from './components/prdouct/add-to-cart/add-to-cart
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
+  {
+    path: 'view',
+    canMatch: [roleManagerGuard],
+    loadChildren: () =>
+      import('./modules/admin-acc/admin-acc.module').then(
+        (m) => m.AdminAccModule
+      ),
+  },
+  {
+    path: 'view',
+    loadChildren: () =>
+      import('./modules/user-acc/user-acc.module').then((m) => m.UserAccModule),
+  },
+
   { path: 'about', component: AboutComponent },
   {
     path: 'product',
@@ -38,7 +53,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes, { enableTracing: false })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
