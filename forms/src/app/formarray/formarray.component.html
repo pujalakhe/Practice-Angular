@@ -1,0 +1,14 @@
+<form action="" [formGroup]="userForm">
+    <label for="exampleFormControlInput1" class="form-label">Contact Number</label> <br>
+    <button type="button" (click)="addContact()">Add</button>
+    <div class="mb-3" formArrayName="contactNumbers">
+        @for(contact of contactNumbers().controls; track contact;let i =$index)
+        {
+        <div [formGroupName]="i">
+            <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Contact"
+                formControlName="contact">
+            <button type="button">Delete</button>
+        </div>
+        }
+    </div>
+</form>
