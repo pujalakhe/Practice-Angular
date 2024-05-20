@@ -1,0 +1,20 @@
+<form action="" [formGroup]="groupForm" (ngSubmit)="onFormSubmitted()">
+    Name:<input type="text" formControlName="firstName"> <br>
+    <div
+        *ngIf="groupForm.controls['firstName'].invalid && (isFormSubmitted||groupForm.controls['firstName'].touched || groupForm.controls['firstName'].dirty)">
+        <span *ngIf="groupForm.controls['firstName'].errors?.['required']"> required</span>
+    </div>
+
+    <div formGroupName="address">
+        Country:<input type="text" placeholder="country" formControlName="country"> <br>
+        <span>hi</span>
+        <div
+            *ngIf="groupForm.controls['country'].invalid && (isFormSubmitted||groupForm.controls['country'].touched || groupForm.controls['country'].dirty)">
+            <span *ngIf="groupForm.controls['country'].errors?.['required']"> required</span>
+
+        </div><br>
+        City<input type="text" placeholder="city" formControlName="city"> <br>
+        Region<input type="text" placeholder="Region" formControlName="region"><br>
+    </div>
+    <input type="submit" value="Submit" (click)="onSubmitted()">
+</form>
