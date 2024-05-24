@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {
+  FormBuilder,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
@@ -17,13 +18,14 @@ import {
 export class FromGroupComponent implements OnInit {
   groupForm!: FormGroup;
   isFormSubmitted: boolean = false;
+  constructor(private builder: FormBuilder) {}
   ngOnInit() {
-    this.groupForm = new FormGroup({
-      firstName: new FormControl(null, Validators.required),
-      address: new FormGroup({
-        country: new FormControl('', Validators.required),
-        city: new FormControl(''),
-        region: new FormControl(''),
+    this.groupForm = this.builder.group({
+      firstName: [null, Validators.required],
+      address: this.builder.group({
+        country: ['', Validators.required],
+        city: [''],
+        region: [''],
       }),
     });
   }

@@ -7,14 +7,13 @@
 
     <div formGroupName="address">
         Country:<input type="text" placeholder="country" formControlName="country"> <br>
-        <span>hi</span>
         <div
-            *ngIf="groupForm.controls['country'].invalid && (isFormSubmitted||groupForm.controls['country'].touched || groupForm.controls['country'].dirty)">
-            <span *ngIf="groupForm.controls['country'].errors?.['required']"> required</span>
-
+            *ngIf="groupForm.controls['country']?.invalid && (isFormSubmitted||groupForm.controls['country'].touched || groupForm.controls['country'].dirty)">
+            <span *ngIf="groupForm.controls['country'].errors?.['required']">required</span>
         </div><br>
         City<input type="text" placeholder="city" formControlName="city"> <br>
         Region<input type="text" placeholder="Region" formControlName="region"><br>
     </div>
     <input type="submit" value="Submit" (click)="onSubmitted()">
+    <!-- [disabled]="!groupForm.valid" -->
 </form>
