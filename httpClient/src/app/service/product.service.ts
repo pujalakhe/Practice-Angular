@@ -25,17 +25,18 @@ export class ProductService {
         products,
         { headers: myHeader }
       )
-      .pipe(retry(3), catchError(this.handelError))
       .subscribe((res) => {
         console.log(res);
       });
   }
   //fetch product from database
   fetchProduct() {
+    // const myHeader = new HttpHeaders({ myHeader: 'Puja' });
     return (
       this.http
         .get<{ [key: string]: Products }>(
           'https://angularhttpclient-d6c93-default-rtdb.firebaseio.com/products.json'
+          // { headers: myHeader }
         )
         //transform json products into obj
         .pipe(
@@ -47,9 +48,7 @@ export class ProductService {
               }
             }
             return products;
-          }),
-          retry(3),
-          catchError(this.handelError)
+          })
         )
     );
   }
@@ -83,22 +82,22 @@ export class ProductService {
       .pipe()
       .subscribe(() => {});
   }
-  //error Handling
-  public handelError(error: HttpErrorResponse) {
-    let err: '';
-    if (error.status === 0) {
-      // console.log('An error Occurred:', error.error.status);
-      alert('An error Occurred:' + error.status + error.statusText);
-    } else {
-      // console.log(
-      //   `Backend returned code ${error.status},body was:`,
-      //   error.status
-      // );
-      alert(`Backend returned code ${error.status} ${error.statusText}`);
-    }
-    // Return an observable with a user-facing error message.
-    return throwError(
-      () => new Error('Something bad happened; please try again later.')
-    );
-  }
+  // //error Handling
+  // public handelError(error: HttpErrorResponse) {
+  //   let err: '';
+  //   if (error.status === 0) {
+  //     // console.log('An error Occurred:', error.error.status);
+  //     alert('An error Occurred:' + error.status + error.statusText);
+  //   } else {
+  //     // console.log(
+  //     //   `Backend returned code ${error.status},body was:`,
+  //     //   error.status
+  //     // );
+  //     alert(`Backend returned code ${error.status} ${error.statusText}`);
+  //   }
+  //   // Return an observable with a user-facing error message.
+  //   return throwError(
+  //     () => new Error('Something bad happened; please try again later.')
+  //   );
+  // }
 }
