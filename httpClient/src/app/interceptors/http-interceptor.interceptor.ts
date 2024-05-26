@@ -25,14 +25,16 @@ export const httpInterceptorInterceptor: HttpInterceptorFn = (
         (errorMessage = 'Backend error occured'),
           +error.status + 'Message:' + error.message;
       }
+      // Handle HTTP errors
       if (error.status == 404) {
         errorMessage = 'Product Not found';
       } else if (error.status == 401) {
-        errorMessage = 'Unauthorized';
+        errorMessage = 'Unauthorized request';
       } else {
         errorMessage = 'Error Occured';
       }
-      alert(errorMessage);
+      // alert(errorMessage);
+      // Re-throw the error to propagate it further
       return throwError(() => errorMessage);
     })
   );
