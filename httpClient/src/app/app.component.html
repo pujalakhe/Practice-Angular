@@ -1,0 +1,44 @@
+<form action="" [formGroup]="myForm" (ngSubmit)="onProductCreate(myForm.value)">
+  <h1>Create Product</h1>
+  <div>
+    Name: <input type="text" placeholder="Product Name" name="pname" formControlName="pname">
+    Description: <input type="text" placeholder="Product desc" name="pdesc" formControlName="pdesc">
+    Price: <input type="text" placeholder="Product Name" name="pprice" formControlName="pprice">
+  </div>
+  <input type="submit" value="{{editMode? 'Update Product': 'Add Product'}}">
+  <h2>All Products</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>S.N</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="allProducts.length<1 && !isFetching">
+        <td colspan="5">NO products Available</td>
+      </tr>
+      <tr *ngIf="errorMessage">
+        <td colspan="5">{{errorMessage}}</td>
+      </tr>
+      <tr *ngIf="isFetching && !errorMessage">
+        <td colspan="5">Loading.....</td>
+      </tr>
+
+      <tr *ngFor="let prod of allProducts ; index as i">
+        <td>{{i+1}}</td>
+        <td>{{prod.pname}}</td>
+        <td>{{prod.pdesc}}</td>
+        <td>{{prod.pprice}}</td>
+        <td><input type="button" value="Delete" (click)="onDeleteProduct(prod.id)"></td>
+        <td><input type="button" value="Edit" (click)="onEditProduct(prod.id)"></td>
+      </tr>
+    </tbody>
+  </table>
+  <input type="button" value="Fetch" (click)="onProductFetch()">
+  <input type="button" value="Clear" (click)="onDeleteAllProduct()">
+
+
+</form>

@@ -8,6 +8,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { CustomVAlidators } from '../validators/noSpaceAllow.validators';
 @Component({
   selector: 'app-reactive-form',
   standalone: true,
@@ -20,10 +21,14 @@ export class ReactiveFormComponent implements OnInit {
   isFormSubmitted: boolean = false;
   ngOnInit() {
     this.reactiveForm = new FormGroup({
-      firstName: new FormControl(null, Validators.required),
+      firstName: new FormControl(null, [
+        Validators.required,
+        CustomVAlidators.noSpaceAllowed,
+      ]),
       lastName: new FormControl(null, [
         Validators.required,
         Validators.maxLength(10),
+        CustomVAlidators.noSpaceAllowed,
       ]),
       email: new FormControl(null, [Validators.email, Validators.required]),
       phoneNo: new FormControl(null, [
@@ -48,7 +53,7 @@ export class ReactiveFormComponent implements OnInit {
   onFormSubmitted() {
     console.log(this.reactiveForm);
   }
-  OnSubmitted() {
+  onSubmitted() {
     this.isFormSubmitted = true;
     if (this.reactiveForm.valid) {
       alert('form Submitted Successfully');
