@@ -6,11 +6,12 @@ import { rejects } from 'assert';
 import { count } from 'console';
 import { resolve } from 'path';
 import { Observable, of, from, fromEvent } from 'rxjs';
+import { MapOperatorComponent } from './components/map-operator/map-operator.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, MapOperatorComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
