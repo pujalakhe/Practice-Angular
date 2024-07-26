@@ -9,6 +9,7 @@ import { Observable, of, from, fromEvent } from 'rxjs';
 import { MapOperatorComponent } from './components/map-operator/map-operator.component';
 import { NewTaskComponent } from './components/new-task/new-task.component';
 import { ShowTaskComponent } from './components/show-task/show-task.component';
+import { SubjectComponent } from './components/subject/subject.component';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,7 @@ import { ShowTaskComponent } from './components/show-task/show-task.component';
     MapOperatorComponent,
     NewTaskComponent,
     ShowTaskComponent,
+    SubjectComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
