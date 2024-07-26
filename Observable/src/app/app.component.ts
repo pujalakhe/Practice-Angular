@@ -10,6 +10,7 @@ import { MapOperatorComponent } from './components/map-operator/map-operator.com
 import { NewTaskComponent } from './components/new-task/new-task.component';
 import { ShowTaskComponent } from './components/show-task/show-task.component';
 import { SubjectComponent } from './components/subject/subject.component';
+import { BehaviouralSubjectComponent } from './components/behavioural-subject/behavioural-subject.component';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ import { SubjectComponent } from './components/subject/subject.component';
     NewTaskComponent,
     ShowTaskComponent,
     SubjectComponent,
+    BehaviouralSubjectComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
