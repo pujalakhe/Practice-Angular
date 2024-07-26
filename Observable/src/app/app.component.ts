@@ -10,6 +10,7 @@ import { SubjectComponent } from './components/subject/subject.component';
 import { BehaviouralSubjectComponent } from './components/behavioural-subject/behavioural-subject.component';
 import { UnsubscribeComponent } from './components/unsubscribe/unsubscribe.component';
 import { ReplaySubjectComponent } from './components/replay-subject/replay-subject.component';
+import { AsyncSubjectComponent } from './components/async-subject/async-subject.component';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ import { ReplaySubjectComponent } from './components/replay-subject/replay-subje
     BehaviouralSubjectComponent,
     UnsubscribeComponent,
     ReplaySubjectComponent,
+    AsyncSubjectComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
