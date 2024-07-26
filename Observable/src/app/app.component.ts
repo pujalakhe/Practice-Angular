@@ -2,9 +2,6 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { rejects } from 'assert';
-import { count } from 'console';
-import { resolve } from 'path';
 import { Observable, of, from, fromEvent } from 'rxjs';
 import { MapOperatorComponent } from './components/map-operator/map-operator.component';
 import { NewTaskComponent } from './components/new-task/new-task.component';
@@ -12,6 +9,7 @@ import { ShowTaskComponent } from './components/show-task/show-task.component';
 import { SubjectComponent } from './components/subject/subject.component';
 import { BehaviouralSubjectComponent } from './components/behavioural-subject/behavioural-subject.component';
 import { UnsubscribeComponent } from './components/unsubscribe/unsubscribe.component';
+import { ReplaySubjectComponent } from './components/replay-subject/replay-subject.component';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +23,7 @@ import { UnsubscribeComponent } from './components/unsubscribe/unsubscribe.compo
     SubjectComponent,
     BehaviouralSubjectComponent,
     UnsubscribeComponent,
+    ReplaySubjectComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

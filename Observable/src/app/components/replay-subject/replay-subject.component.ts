@@ -1,17 +1,20 @@
-//behavioural-subject.component.ts
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-
+import { log } from 'console';
+import { ReplaySubject } from 'rxjs';
 @Component({
-  selector: 'app-behavioural-subject',
+  selector: 'app-replay-subject',
   standalone: true,
   imports: [],
-  templateUrl: './behavioural-subject.component.html',
-  styleUrl: './behavioural-subject.component.scss',
+  templateUrl: './replay-subject.component.html',
+  styleUrl: './replay-subject.component.scss',
 })
-export class BehaviouralSubjectComponent implements OnInit {
+export class ReplaySubjectComponent implements OnInit {
   ngOnInit(): void {
-    const sub = new BehaviorSubject<number>(100);
+    const sub = new ReplaySubject();
+    console.log('ReplaySubject');
+    sub.next(100);
+    sub.next(200);
+    sub.next(300);
 
     //subscriber1
     sub.subscribe((data) => {
@@ -27,6 +30,7 @@ export class BehaviouralSubjectComponent implements OnInit {
     //subscriber3
     sub.subscribe((data) => {
       console.log('After new value has been emitted i.e.2020');
+
       console.log(`subscriber3:${data}`);
     });
 
