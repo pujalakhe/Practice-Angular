@@ -7,11 +7,19 @@ import { count } from 'console';
 import { resolve } from 'path';
 import { Observable, of, from, fromEvent } from 'rxjs';
 import { MapOperatorComponent } from './components/map-operator/map-operator.component';
+import { NewTaskComponent } from './components/new-task/new-task.component';
+import { ShowTaskComponent } from './components/show-task/show-task.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, MapOperatorComponent],
+  imports: [
+    RouterOutlet,
+    CommonModule,
+    MapOperatorComponent,
+    NewTaskComponent,
+    ShowTaskComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
