@@ -1,0 +1,8 @@
+<!-- unsubscribe.component.html -->
+<h1>Unsubscribe</h1>
+<h4>Subscriber</h4>
+<button (click)="onSubscribeClicked()">Subscribe</button>
+<button (click)="onUnsubscribeClicked()">UnSubscribe</button>
+<div *ngFor="let item of data" id="container">
+    {{item}}
+</div>
