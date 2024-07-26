@@ -17,13 +17,13 @@ export class ProductService {
   //create product in database
   createProduct(products: { pname: string; pdesc: string; pprice: number }) {
     console.log(products);
-    const myHeader = new HttpHeaders({ myHeader: 'Puja' });
+    // const myHeader = new HttpHeaders({ myHeader: 'Puja' });
     //Post data to server
     this.http
       .post<{ name: string }>(
         'https://angularhttpclient-d6c93-default-rtdb.firebaseio.com/products.json',
-        products,
-        { headers: myHeader }
+        products
+        // { headers: myHeader }
       )
       .subscribe((res) => {
         console.log(res);

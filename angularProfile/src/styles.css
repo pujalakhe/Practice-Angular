@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --body-color: rgb(220, 196, 223);
+  --color-white: #fff;
+  --text-color-second: rgba(250, 250, 250);
+  --first-shadow: rgba(0, 0, 0, 00.1);
+
+  --box-color: #fff;
+  --nav-color: #fff;
+  --nav-icon: #000;
+  --logo-color: #000;
+
+  --text-color: #444;
+  --color-white: #242526;
+
+  --icon-color: #242526;
+  --mode-color: #ccc;
+}
