@@ -11,6 +11,7 @@ import { NewTaskComponent } from './components/new-task/new-task.component';
 import { ShowTaskComponent } from './components/show-task/show-task.component';
 import { SubjectComponent } from './components/subject/subject.component';
 import { BehaviouralSubjectComponent } from './components/behavioural-subject/behavioural-subject.component';
+import { UnsubscribeComponent } from './components/unsubscribe/unsubscribe.component';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,7 @@ import { BehaviouralSubjectComponent } from './components/behavioural-subject/be
     ShowTaskComponent,
     SubjectComponent,
     BehaviouralSubjectComponent,
+    UnsubscribeComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
