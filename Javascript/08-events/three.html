@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async code</title>
+</head>
+<body>
+    <h1>chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+        
+    const print= function()
+        {
+            console.log("puja",Date.now());
+        }
+        print()
+        //setInterval(print,1000)
+    const printEverySec = function(str)
+    {
+        
+        console.log(str,Date.now());  
+    }
+    const intervalId= setInterval(printEverySec,1000,"puja",);
+
+    clearInterval(intervalId);
+
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async code</title>
+</head>
+<body>
+    <h1>Asynchronous JS practice</h1>
+    <p>Asynchronous code are setTimeout(),setInterval(),clearInterval(),etc</p>
+    </p>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let intervalId;
+    const startPrinting =function()
+    {
+       if(!intervalId)  { 
+            intervalId=setInterval(textTobePrinted,1000)}
+    }
+    const textTobePrinted = function()
+    {
+        console.log("puja",Date.now());
+    }
+    const stopPrinting=function(){
+        clearInterval(intervalId);
+        intervalId = null;
+    }
+
+    document.querySelector('#start').addEventListener('click',startPrinting);
+
+    document.querySelector('#stop').addEventListener('click',stopPrinting);
+</script>
+</html>

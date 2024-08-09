@@ -1,0 +1,8 @@
+Javascript :Synchronous means code executing one after another.
+:It is a single threaded language.
+
+blocking code Vs Non blocking code
+blocking code:Block the flow of the program
+             :Read file Synchronously
+Non blocking code:doesnt block the flow of program
+                 :Read file Asynchronously
